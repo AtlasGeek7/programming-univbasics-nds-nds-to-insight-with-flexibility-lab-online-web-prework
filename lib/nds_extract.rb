@@ -7,10 +7,9 @@ require 'directors_database'
 def flatten_a_o_a(aoa)
   result = []
   i = 0
-
-  while i < aoa.length do
+  while i < aoa.length
     k = 0
-    while k < aoa[i].length do
+    while k < aoa[i].length
       result << aoa[i][k]
       k += 1
     end
@@ -36,7 +35,7 @@ def movies_with_director_key(name, movies_collection)
   arr = []
   i = 0
   len = movies_collection.length
-  while i < len do
+  while i < len
     arr << movie_with_director_name(name, movies_collection[i])
     i += 1
   end
@@ -47,7 +46,7 @@ def gross_per_studio(collection)
   result = {}
   i = 0
   len = collection.length
-  while i < len do
+  while i < len
     studio_name = collection[i][:studio]
     studio_gross = collection[i][:worldwide_gross]
     if !result[studio_name]
@@ -64,11 +63,11 @@ def movies_with_directors_set(source)
   arr = []
   i = 0
   len1 = source.length
-  while i < len1 do
+  while i < len1
     j = 0
     inner_arr = []
     len2 = source[i][:movies].length
-    while j < len2 do
+    while j < len2
       director_name = source[i][:name]
       movie_data = source[i][:movies][j]
       inner_arr << movie_with_director_name(director_name, movie_data)
